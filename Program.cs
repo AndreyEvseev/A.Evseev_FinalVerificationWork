@@ -5,9 +5,10 @@
 
 void FillStringArrayConsole(string [] array)
 {
+    Console.WriteLine($"Задан массив строк, длиной {array.Length}.");
     for (int i = 0; i < array.Length; i++)
     {
-        Console.Write($"Введите {i}-й элемент массива строк: ");
+        Console.Write($"Введите {i + 1}-й элемент массива строк: ");
         array[i] = Console.ReadLine();
         Console.WriteLine();
     }
@@ -58,12 +59,11 @@ string OutputArrayString(string [] array)
     return result;
 }
 
-string[] received = CreateStringArray(6);
+string[] received = CreateStringArray();
 FillStringArrayConsole(received);
 OutputArrayConsole(received);
 int value = 3;
 int lenResult = DeterminingLengthResultArray(received, value);
-Console.WriteLine(lenResult);
 string[] result = CreateStringArray(lenResult);
 FillResultArray(received, result, value);
 OutputArrayConsole(result);
